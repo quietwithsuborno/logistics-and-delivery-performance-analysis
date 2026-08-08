@@ -5,7 +5,7 @@
 
 ## 📌 Project Overview
 
-This project is a end-to-end logistics analytics case study built entirely in **Microsoft Excel**, designed to showcase advanced Excel skills including Power Query, Power Pivot, DAX, PivotTables, and interactive dashboard design.
+This project is an end-to-end logistics analytics case study built entirely in **Microsoft Excel**, designed to showcase advanced Excel skills including Power Pivot, DAX, PivotTables, and dashboard design.
 
 **Company:** Shohoz Express Ltd. *(fictional)*
 
@@ -14,6 +14,12 @@ This project is a end-to-end logistics analytics case study built entirely in **
 **Analysis Period:** July 2025 – June 2026
 
 **Dataset:** 5,000 shipments across 5 regions, 10 routes, and 6 carriers
+
+---
+
+## 📝 Executive Summary
+
+Shohoz Express Ltd. is experiencing a sustained decline in delivery performance, with an overall On-Time Delivery (OTD) rate of just **54.52%** — far below the industry benchmark of 85%+. This project analyzes 12 months of shipment data to identify the root causes of delay across carriers, regions, routes, and operational timing. The analysis reveals that the problem is **structural rather than seasonal**, driven by specific underperforming carriers and route-level inefficiencies. Three targeted, actionable recommendations are provided to guide management's immediate intervention.
 
 ---
 
@@ -39,30 +45,42 @@ This project is a end-to-end logistics analytics case study built entirely in **
 ## 🗂️ Repository Structure
 
 ```
-shohoz-express-logistics/
+excel-logistics-performance-analysis/
 │
 ├── data/
 │   ├── raw/                        # Intentionally messy raw datasets
-│   │   ├── Shipments_raw.xlsx
-│   │   ├── Carriers_raw.xlsx
-│   │   └── Routes_raw.xlsx
 │   └── clean/                      # Cleaned datasets
-│       ├── Shipments.xlsx
-│       ├── Carriers.xlsx
-│       └── Routes.xlsx
 │
 ├── docs/
 │   ├── 01_project_brief.md         # Business problem & scope
 │   ├── 02_dataset_structure.md     # Table design & relationships
-│   ├── 03_data_issue_log.md            # Pre-cleaning data quality audit
+│   ├── 03_data_issue_log.md        # Pre-cleaning data quality audit
 │   ├── 04_data_cleaning_log.md     # Step-by-step cleaning documentation
-│   ├── 05_insight_report.md        # Key findings & recommendations
+│   └── 05_insight_report.md        # Key findings & recommendations
 │
-├── assets/
-│   └── dashboard.png               # Dashboard screenshot
-│
-└── Shohoz_Express_Logistics.xlsx   # Main workbook (Data Model + Analysis + Dashboard)
+├── dashboard.png               # Dashboard screenshot
+└──
 ```
+
+---
+
+## 🔬 Methodology
+
+This project follows a structured end-to-end analytics workflow:
+
+1. **Data Collection & Design** — Defined the business problem, designed a 3-table relational dataset structure (Shipments, Carriers, Routes), and generated a realistic raw dataset with intentional data quality issues to simulate real-world operational data.
+
+2. **Data Quality Audit** — Manually inspected all 3 raw tables and documented 21 data quality issues before any cleaning began (see [`03_data_issue_log.md`](docs/03_data_issue_log.md)).
+
+3. **Data Cleaning** — Resolved all 21 issues using Excel formulas and built-in tools. Each fix was documented with the problem, logic, formula used, and outcome (see [`04_data_cleaning_log.md`](docs/04_data_cleaning_log.md)).
+
+4. **Data Modeling** — Loaded the 3 cleaned tables into Power Pivot and created a star schema with relationships (Shipments as the fact table, Carriers and Routes as dimension tables). Added calculated columns (Delay_Days, OTD_Flag, Cost_per_KM) and a reusable DAX measure (Late %).
+
+5. **Analysis** — Conducted 6 PivotTable-based analyses covering OTD trend, carrier performance, region/route breakdown, delay vs cost correlation, and day-of-week patterns.
+
+6. **Dashboard** — Built a single-page executive dashboard with 4 KPI cards and 5 charts to present findings visually.
+
+7. **Insights & Recommendations** — Synthesized findings into 3 targeted, data-backed recommendations for management action.
 
 ---
 
@@ -83,8 +101,10 @@ shohoz-express-logistics/
 ## 📊 Dashboard Preview
 
 <p align="center">
-  <img src="assets/dashboard.PNG" alt="dashboard_image" width="1000">
+  <img src="dashboard.PNG" alt="dashboard_image" width="1000">
 </p>
+
+📄 **Full dashboard insights, business interpretation, and recommendations:** [`Dashboard Insight Report`](docs/05_insight_report.md)
 
 ---
 
@@ -119,7 +139,23 @@ Full cleaning documentation: [`data_cleaning`](docs/04_data_cleaning_log.md)
 2. **Strengthen rural route coverage** — dedicated carriers and route-specific SLAs for top 3 worst routes
 3. **Redistribute Monday–Tuesday shipment load** — increase Friday/Saturday processing to reduce week-start backlog
 
-Full findings: [`details_report`](docs/05_insight_report.md)
+Full findings: [`details_report`](docs/05_dashboard_insight.md)
+
+---
+
+## ⚠️ Limitations & Future Improvements
+
+**Limitations:**
+- The dataset is **synthetically generated** — findings reflect simulated patterns, not real operational data
+- **No product category or order value data** — cost analysis is limited to shipment-level cost only; revenue impact of delays could not be quantified
+- **Delay_Reason has data gaps** — 76 delayed shipments had no recorded reason (`Missing Reason`), limiting root-cause analysis depth
+- **Dashboard is static** — charts are not connected to slicers due to the mix of PivotCharts and manual charts; filtering requires going to individual analysis sheets
+
+**Future Improvements:**
+- Integrate actual delivery GPS/route data for more precise delay root-cause analysis
+- Add a **Supplier Performance** dimension to track upstream delays
+- Rebuild the dashboard in **Power BI** for full interactivity and slicer connectivity
+- Expand the dataset to include **order value and revenue** to quantify the financial impact of delays
 
 ---
 
@@ -129,6 +165,4 @@ Full findings: [`details_report`](docs/05_insight_report.md)
 
 Junior Data Analyst | Supply Chain & Logistics Domain
 
-[GitHub](https://github.com/quietwithsuborno) · 
-
-[LinkedIn](https://www.linkedin.com/in/maksuda-akter-suborno-9957573ab/)
+[GitHub](https://github.com/quietwithsuborno) · [LinkedIn](https://www.linkedin.com/in/maksuda-akter-suborno-9957573ab/)
