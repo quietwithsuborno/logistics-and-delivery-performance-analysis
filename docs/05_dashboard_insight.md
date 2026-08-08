@@ -10,7 +10,7 @@ Shohoz Express Ltd. delivered **5,000 shipments** across 5 regions and 10 routes
 ---
 
 <p align="center">
-  <img src="docs/dashboard.PNG" alt="dashboard" width="800">
+  <img src="dashboard.PNG" alt="dashboard" width="800">
 </p>
 
 ## 🔍 Key Findings
