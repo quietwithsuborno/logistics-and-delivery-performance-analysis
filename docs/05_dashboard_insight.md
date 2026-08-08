@@ -1,6 +1,6 @@
-# 📦 Logistics & Delivery Performance — Insight Report
-### Shohoz Express Ltd. | Analysis Period: July 2025 – June 2026
+# 📊 Dashboard Insight Report
 
+### Shohoz Express Ltd. — Logistics & Delivery Performance Analysis | July 2025 – June 2026
 ---
 
 ## 📋 Executive Summary
@@ -8,6 +8,10 @@
 Shohoz Express Ltd. delivered **5,000 shipments** across 5 regions and 10 routes over a 12-month period. The overall On-Time Delivery (OTD) rate stands at **54.52%** — well below the industry benchmark of 85%+. Analysis across carrier performance, regional patterns, and operational timing reveals that the root cause is **structural**, not seasonal, pointing to specific carriers, routes, and scheduling practices as the primary drivers of delay.
 
 ---
+
+<p align="center">
+  <img src="docs/dashboard.PNG" alt="dashboard" width="800">
+</p>
 
 ## 🔍 Key Findings
 
